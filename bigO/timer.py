@@ -1,9 +1,12 @@
-from timeit import Timer
+import timeit
+import random
 
-def test1():
-	l = []
-	for i in range(1000):
-		l = l + [i]
-
-t1 = Timer("test1()", "from __main__ import test1")
-print(f"concatenation: {t1.timeit(number=1000):15.2f} milliseconds")
+print(f"{'n':10s}{'list':>10s}{'dict':>10s}")
+for i in range(10_000, 1_000_001, 20_000):
+    t = timeit.Timer(f"random.randrange({i}) in x",
+    "from __main__ import random, x")
+    x = list(range(i))
+    lst_time = t.timeit(number=1000)
+    x = {j: None for j in range(i)}
+    dict_time = t.timeit(number=1000)
+    print(f"{i:<10,}{lst_time:>10.3f}{dict_time:>10.3f}")
