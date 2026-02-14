@@ -1,4 +1,4 @@
-function flattenArray(arr){
+function what(arr){
   
   return arr.reduce((acc, elem) => {
     if(Array.isArray(elem)){
@@ -11,4 +11,8 @@ function flattenArray(arr){
 
 }
 
-console.log(flattenArray([1,2,3,[1,2,3]]))
+
+function flattenArray(arr){
+  
+}
+
