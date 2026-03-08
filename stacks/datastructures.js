@@ -96,7 +96,6 @@ class LinkedList {
       while(current.next){
         current = current.next
       }
-
       current.next = node
       this.length++
     }
