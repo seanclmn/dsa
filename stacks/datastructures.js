@@ -1,5 +1,3 @@
-
-
 class Stack {
   constructor(){
     this._storage = {}
@@ -73,6 +71,7 @@ class LinkedList {
 
   prepend(value){
     const node = new Node(value)
+
     if(!this.length){
       this.head = node
     }else{
